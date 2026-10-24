@@ -1,0 +1,20 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.vite/
+# Office lock files and local tooling
+~$*
+.claude/
+*.tmp
+# Generated report documents (kept local: contain team registration numbers)
+docs/report/

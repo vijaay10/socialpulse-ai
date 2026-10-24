@@ -1,0 +1,188 @@
+[
+  {
+    "post_id": "sample_invalid_ok_1",
+    "platform": "facebook",
+    "user": {
+      "user_id": "syn_u15",
+      "handle": "@syn_user_15",
+      "followers": 1380,
+      "verified": false
+    },
+    "text": "Loved the demo at the startup meetup, super impressive work 😍 #startup #delhi",
+    "hashtags": [
+      "startup",
+      "delhi"
+    ],
+    "language": "en",
+    "created_at": "2026-09-24T08:33:28.126Z",
+    "engagement": {
+      "likes": 46,
+      "shares": 7,
+      "comments": 4,
+      "reach": 1629
+    },
+    "media": [
+      {
+        "type": "image",
+        "url": "https://example.invalid/media/0.jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "engagement_history": [
+      {
+        "at": "2026-09-24T09:33:28.126Z",
+        "likes": 16,
+        "shares": 2,
+        "comments": 1,
+        "reach": 1100
+      },
+      {
+        "at": "2026-09-24T14:33:28.126Z",
+        "likes": 35,
+        "shares": 5,
+        "comments": 3,
+        "reach": 1425
+      },
+      {
+        "at": "2026-09-25T08:33:28.126Z",
+        "likes": 46,
+        "shares": 7,
+        "comments": 4,
+        "reach": 1629
+      }
+    ],
+    "replies": [
+      {
+        "comment_id": "sample_json_c0_0",
+        "user": {
+          "user_id": "syn_u13",
+          "handle": "@syn_user_13"
+        },
+        "text": "So good, thanks for sharing",
+        "created_at": "2026-09-24T09:03:28.126Z"
+      },
+      {
+        "comment_id": "sample_json_c0_1",
+        "user": {
+          "user_id": "syn_u5",
+          "handle": "@syn_user_5"
+        },
+        "text": "So good, thanks for sharing",
+        "created_at": "2026-09-24T09:33:28.126Z"
+      }
+    ],
+    "synthetic": true
+  },
+  {
+    "post_id": "sample_invalid_ok_1",
+    "platform": "facebook",
+    "user": {
+      "user_id": "syn_u15",
+      "handle": "@syn_user_15",
+      "followers": 1380,
+      "verified": false
+    },
+    "text": "Loved the demo at the startup meetup, super impressive work 😍 #startup #delhi",
+    "hashtags": [
+      "startup",
+      "delhi"
+    ],
+    "language": "en",
+    "created_at": "2026-09-24T08:33:28.126Z",
+    "engagement": {
+      "likes": 46,
+      "shares": 7,
+      "comments": 4,
+      "reach": 1629
+    },
+    "media": [
+      {
+        "type": "image",
+        "url": "https://example.invalid/media/0.jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "engagement_history": [
+      {
+        "at": "2026-09-24T09:33:28.126Z",
+        "likes": 16,
+        "shares": 2,
+        "comments": 1,
+        "reach": 1100
+      },
+      {
+        "at": "2026-09-24T14:33:28.126Z",
+        "likes": 35,
+        "shares": 5,
+        "comments": 3,
+        "reach": 1425
+      },
+      {
+        "at": "2026-09-25T08:33:28.126Z",
+        "likes": 46,
+        "shares": 7,
+        "comments": 4,
+        "reach": 1629
+      }
+    ],
+    "replies": [
+      {
+        "comment_id": "sample_json_c0_0",
+        "user": {
+          "user_id": "syn_u13",
+          "handle": "@syn_user_13"
+        },
+        "text": "So good, thanks for sharing",
+        "created_at": "2026-09-24T09:03:28.126Z"
+      },
+      {
+        "comment_id": "sample_json_c0_1",
+        "user": {
+          "user_id": "syn_u5",
+          "handle": "@syn_user_5"
+        },
+        "text": "So good, thanks for sharing",
+        "created_at": "2026-09-24T09:33:28.126Z"
+      }
+    ],
+    "synthetic": true
+  },
+  {
+    "post_id": "sample_invalid_2",
+    "platform": "myspace",
+    "text": "unknown platform",
+    "created_at": "2026-10-01T10:00:00Z",
+    "user_id": "u1"
+  },
+  {
+    "post_id": "sample_invalid_3",
+    "platform": "twitter",
+    "text": "",
+    "created_at": "2026-10-01T10:00:00Z",
+    "user_id": "u1"
+  },
+  {
+    "post_id": "sample_invalid_4",
+    "platform": "twitter",
+    "text": "bad date",
+    "created_at": "not-a-date",
+    "user_id": "u1"
+  },
+  {
+    "post_id": "sample_invalid_5",
+    "platform": "twitter",
+    "text": "negative likes",
+    "created_at": "2026-10-01T10:00:00Z",
+    "user_id": "u1",
+    "likes": -5
+  },
+  {
+    "platform": "twitter",
+    "text": "missing id",
+    "created_at": "2026-10-01T10:00:00Z",
+    "user_id": "u1"
+  },
+  "not an object"
+]

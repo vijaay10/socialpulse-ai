@@ -1,0 +1,1297 @@
+{
+  "run_id": "cli_20261023T173238_b1c49e",
+  "source": "cli",
+  "created_at": "2026-10-23T17:32:38.893Z",
+  "conditions": {
+    "node": "v22.14.0",
+    "platform": "darwin 24.6.0 arm64",
+    "cpu": "Apple M2 Pro",
+    "cpus": 10,
+    "memoryGb": 16,
+    "mongodbVersion": "7.0.45",
+    "mongoHost": "localhost",
+    "posts": 20000,
+    "warmupRuns": 5,
+    "measuredRuns": 30,
+    "timing": "in-process wall clock (performance.now) around the service call; excludes HTTP overhead",
+    "sizes": [
+      1000,
+      5000,
+      20000
+    ],
+    "benchDatabase": "socialpulse_bench",
+    "dataset": "synthetic, seed 42, 30 days"
+  },
+  "results": {
+    "datasets": [
+      {
+        "posts": 1000,
+        "ingest": {
+          "imported": 1000,
+          "durationMs": 872
+        },
+        "queries": [
+          {
+            "name": "overview(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 7.633,
+              "medianMs": 7.764,
+              "p95Ms": 8.222,
+              "minMs": 6.556,
+              "maxMs": 8.296
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 10.43,
+              "medianMs": 10.557,
+              "p95Ms": 12.118,
+              "minMs": 8.295,
+              "maxMs": 12.668
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.475,
+              "medianMs": 0.427,
+              "p95Ms": 0.596,
+              "minMs": 0.325,
+              "maxMs": 1.626
+            },
+            "hitRatio": 1,
+            "speedupMedian": 18.2
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 4.964,
+              "medianMs": 4.993,
+              "p95Ms": 5.808,
+              "minMs": 3.867,
+              "maxMs": 5.999
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 6.384,
+              "medianMs": 6.113,
+              "p95Ms": 8.493,
+              "minMs": 4.86,
+              "maxMs": 10.061
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.437,
+              "medianMs": 0.411,
+              "p95Ms": 0.587,
+              "minMs": 0.344,
+              "maxMs": 1.249
+            },
+            "hitRatio": 1,
+            "speedupMedian": 12.1
+          },
+          {
+            "name": "trends:rising(7d)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10,
+              "minCount": 3
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 2.367,
+              "medianMs": 2.351,
+              "p95Ms": 2.719,
+              "minMs": 2.045,
+              "maxMs": 3.176
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 4.244,
+              "medianMs": 4.194,
+              "p95Ms": 5.332,
+              "minMs": 3.436,
+              "maxMs": 5.792
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.425,
+              "medianMs": 0.397,
+              "p95Ms": 0.545,
+              "minMs": 0.346,
+              "maxMs": 1.003
+            },
+            "hitRatio": 1,
+            "speedupMedian": 5.9
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "params": {
+              "window": "30d",
+              "platform": [
+                "twitter"
+              ]
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 3.916,
+              "medianMs": 3.992,
+              "p95Ms": 4.619,
+              "minMs": 3.044,
+              "maxMs": 4.986
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 5.663,
+              "medianMs": 5.535,
+              "p95Ms": 6.78,
+              "minMs": 4.717,
+              "maxMs": 7.22
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.397,
+              "medianMs": 0.392,
+              "p95Ms": 0.436,
+              "minMs": 0.341,
+              "maxMs": 0.465
+            },
+            "hitRatio": 1,
+            "speedupMedian": 10.2
+          },
+          {
+            "name": "engagement(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 11.076,
+              "medianMs": 10.803,
+              "p95Ms": 13.625,
+              "minMs": 9.502,
+              "maxMs": 15.744
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 13.543,
+              "medianMs": 13.244,
+              "p95Ms": 15.903,
+              "minMs": 11.466,
+              "maxMs": 17.123
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.624,
+              "medianMs": 0.617,
+              "p95Ms": 0.869,
+              "minMs": 0.43,
+              "maxMs": 1.024
+            },
+            "hitRatio": 1,
+            "speedupMedian": 17.5
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "params": {
+              "hashtag": [
+                "ai"
+              ],
+              "page": 1
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 0.975,
+              "medianMs": 0.971,
+              "p95Ms": 1.177,
+              "minMs": 0.814,
+              "maxMs": 1.209
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 3.174,
+              "medianMs": 2.807,
+              "p95Ms": 4.929,
+              "minMs": 2.28,
+              "maxMs": 5.08
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.473,
+              "medianMs": 0.47,
+              "p95Ms": 0.544,
+              "minMs": 0.393,
+              "maxMs": 0.627
+            },
+            "hitRatio": 1,
+            "speedupMedian": 2.1
+          }
+        ],
+        "indexEffect": [
+          {
+            "name": "overview(30d)",
+            "allIndexesMedianMs": 7.764,
+            "onlyCreatedAtIndexMedianMs": 8.334,
+            "noSecondaryIndexesMedianMs": 10.596,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 7.633,
+              "medianMs": 7.764,
+              "p95Ms": 8.222,
+              "minMs": 6.556,
+              "maxMs": 8.296
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 8.421,
+              "medianMs": 8.334,
+              "p95Ms": 10.643,
+              "minMs": 6.696,
+              "maxMs": 11.016
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 10.934,
+              "medianMs": 10.596,
+              "p95Ms": 15.546,
+              "minMs": 8.439,
+              "maxMs": 18.414
+            }
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "allIndexesMedianMs": 4.993,
+            "onlyCreatedAtIndexMedianMs": 4.521,
+            "noSecondaryIndexesMedianMs": 6.468,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 4.964,
+              "medianMs": 4.993,
+              "p95Ms": 5.808,
+              "minMs": 3.867,
+              "maxMs": 5.999
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 4.419,
+              "medianMs": 4.521,
+              "p95Ms": 5.126,
+              "minMs": 3.395,
+              "maxMs": 5.754
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 6.698,
+              "medianMs": 6.468,
+              "p95Ms": 8.31,
+              "minMs": 4.389,
+              "maxMs": 11.86
+            }
+          },
+          {
+            "name": "trends:rising(7d)",
+            "allIndexesMedianMs": 2.351,
+            "onlyCreatedAtIndexMedianMs": 2.756,
+            "noSecondaryIndexesMedianMs": 3.604,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 2.367,
+              "medianMs": 2.351,
+              "p95Ms": 2.719,
+              "minMs": 2.045,
+              "maxMs": 3.176
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 3.003,
+              "medianMs": 2.756,
+              "p95Ms": 4.952,
+              "minMs": 2.105,
+              "maxMs": 7.536
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 3.62,
+              "medianMs": 3.604,
+              "p95Ms": 4.214,
+              "minMs": 3.096,
+              "maxMs": 4.788
+            }
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "allIndexesMedianMs": 3.992,
+            "onlyCreatedAtIndexMedianMs": 4.224,
+            "noSecondaryIndexesMedianMs": 4.689,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 3.916,
+              "medianMs": 3.992,
+              "p95Ms": 4.619,
+              "minMs": 3.044,
+              "maxMs": 4.986
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 4.257,
+              "medianMs": 4.224,
+              "p95Ms": 5.18,
+              "minMs": 3.561,
+              "maxMs": 5.286
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 4.781,
+              "medianMs": 4.689,
+              "p95Ms": 5.641,
+              "minMs": 3.889,
+              "maxMs": 5.897
+            }
+          },
+          {
+            "name": "engagement(30d)",
+            "allIndexesMedianMs": 10.803,
+            "onlyCreatedAtIndexMedianMs": 10.194,
+            "noSecondaryIndexesMedianMs": 9.943,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 11.076,
+              "medianMs": 10.803,
+              "p95Ms": 13.625,
+              "minMs": 9.502,
+              "maxMs": 15.744
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 10.347,
+              "medianMs": 10.194,
+              "p95Ms": 12.303,
+              "minMs": 9.236,
+              "maxMs": 12.439
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 10.036,
+              "medianMs": 9.943,
+              "p95Ms": 11.053,
+              "minMs": 8.535,
+              "maxMs": 12.475
+            }
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "allIndexesMedianMs": 0.971,
+            "onlyCreatedAtIndexMedianMs": 1.21,
+            "noSecondaryIndexesMedianMs": 1.176,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 0.975,
+              "medianMs": 0.971,
+              "p95Ms": 1.177,
+              "minMs": 0.814,
+              "maxMs": 1.209
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 1.297,
+              "medianMs": 1.21,
+              "p95Ms": 1.799,
+              "minMs": 1.1,
+              "maxMs": 1.855
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 1.202,
+              "medianMs": 1.176,
+              "p95Ms": 1.375,
+              "minMs": 1.106,
+              "maxMs": 1.456
+            }
+          }
+        ],
+        "explain": {
+          "indexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "FETCH",
+              "IXSCAN(hashtags_created)"
+            ],
+            "nReturned": 8,
+            "totalKeysExamined": 8,
+            "totalDocsExamined": 8,
+            "executionTimeMillis": 0
+          },
+          "unindexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "COLLSCAN"
+            ],
+            "nReturned": 8,
+            "totalKeysExamined": 0,
+            "totalDocsExamined": 1000,
+            "executionTimeMillis": 0
+          }
+        },
+        "workload": null
+      },
+      {
+        "posts": 5000,
+        "ingest": {
+          "imported": 5000,
+          "durationMs": 2598
+        },
+        "queries": [
+          {
+            "name": "overview(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 32.568,
+              "medianMs": 31.902,
+              "p95Ms": 37.308,
+              "minMs": 29.495,
+              "maxMs": 38.748
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 34.993,
+              "medianMs": 33.872,
+              "p95Ms": 43.35,
+              "minMs": 30.761,
+              "maxMs": 45.329
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.416,
+              "medianMs": 0.407,
+              "p95Ms": 0.518,
+              "minMs": 0.326,
+              "maxMs": 0.627
+            },
+            "hitRatio": 1,
+            "speedupMedian": 78.4
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 14.622,
+              "medianMs": 12.74,
+              "p95Ms": 22.801,
+              "minMs": 10.556,
+              "maxMs": 30.509
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 13.836,
+              "medianMs": 13.373,
+              "p95Ms": 16.243,
+              "minMs": 12.392,
+              "maxMs": 19.666
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.599,
+              "medianMs": 0.513,
+              "p95Ms": 1.325,
+              "minMs": 0.443,
+              "maxMs": 1.537
+            },
+            "hitRatio": 1,
+            "speedupMedian": 24.8
+          },
+          {
+            "name": "trends:rising(7d)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10,
+              "minCount": 3
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 7.881,
+              "medianMs": 7.742,
+              "p95Ms": 9.145,
+              "minMs": 7.068,
+              "maxMs": 9.438
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 9.75,
+              "medianMs": 9.471,
+              "p95Ms": 11.555,
+              "minMs": 8.27,
+              "maxMs": 12.446
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.667,
+              "medianMs": 0.592,
+              "p95Ms": 1.26,
+              "minMs": 0.414,
+              "maxMs": 1.663
+            },
+            "hitRatio": 1,
+            "speedupMedian": 13.1
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "params": {
+              "window": "30d",
+              "platform": [
+                "twitter"
+              ]
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 11.881,
+              "medianMs": 11.573,
+              "p95Ms": 13.78,
+              "minMs": 10.973,
+              "maxMs": 15.038
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 14.119,
+              "medianMs": 13.754,
+              "p95Ms": 16.418,
+              "minMs": 12.155,
+              "maxMs": 18.178
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.496,
+              "medianMs": 0.486,
+              "p95Ms": 0.626,
+              "minMs": 0.387,
+              "maxMs": 0.685
+            },
+            "hitRatio": 1,
+            "speedupMedian": 23.8
+          },
+          {
+            "name": "engagement(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 42.54,
+              "medianMs": 41.34,
+              "p95Ms": 47.587,
+              "minMs": 38.908,
+              "maxMs": 51.219
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 45.459,
+              "medianMs": 43.284,
+              "p95Ms": 56.081,
+              "minMs": 40.256,
+              "maxMs": 62.542
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.67,
+              "medianMs": 0.624,
+              "p95Ms": 0.751,
+              "minMs": 0.536,
+              "maxMs": 1.826
+            },
+            "hitRatio": 1,
+            "speedupMedian": 66.3
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "params": {
+              "hashtag": [
+                "ai"
+              ],
+              "page": 1
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 1.161,
+              "medianMs": 1.023,
+              "p95Ms": 1.858,
+              "minMs": 0.881,
+              "maxMs": 1.938
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 3.52,
+              "medianMs": 3.215,
+              "p95Ms": 5.097,
+              "minMs": 2.43,
+              "maxMs": 6.037
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.459,
+              "medianMs": 0.445,
+              "p95Ms": 0.522,
+              "minMs": 0.404,
+              "maxMs": 0.55
+            },
+            "hitRatio": 1,
+            "speedupMedian": 2.3
+          }
+        ],
+        "indexEffect": [
+          {
+            "name": "overview(30d)",
+            "allIndexesMedianMs": 31.902,
+            "onlyCreatedAtIndexMedianMs": 30.347,
+            "noSecondaryIndexesMedianMs": 31.626,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 32.568,
+              "medianMs": 31.902,
+              "p95Ms": 37.308,
+              "minMs": 29.495,
+              "maxMs": 38.748
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 31.74,
+              "medianMs": 30.347,
+              "p95Ms": 37.378,
+              "minMs": 28.45,
+              "maxMs": 39.488
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 31.973,
+              "medianMs": 31.626,
+              "p95Ms": 34.176,
+              "minMs": 30.732,
+              "maxMs": 34.84
+            }
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "allIndexesMedianMs": 12.74,
+            "onlyCreatedAtIndexMedianMs": 12.185,
+            "noSecondaryIndexesMedianMs": 15.963,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 14.622,
+              "medianMs": 12.74,
+              "p95Ms": 22.801,
+              "minMs": 10.556,
+              "maxMs": 30.509
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 12.345,
+              "medianMs": 12.185,
+              "p95Ms": 13.312,
+              "minMs": 10.629,
+              "maxMs": 18.538
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 16.475,
+              "medianMs": 15.963,
+              "p95Ms": 17.54,
+              "minMs": 15.057,
+              "maxMs": 30.313
+            }
+          },
+          {
+            "name": "trends:rising(7d)",
+            "allIndexesMedianMs": 7.742,
+            "onlyCreatedAtIndexMedianMs": 8.383,
+            "noSecondaryIndexesMedianMs": 10.632,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 7.881,
+              "medianMs": 7.742,
+              "p95Ms": 9.145,
+              "minMs": 7.068,
+              "maxMs": 9.438
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 8.631,
+              "medianMs": 8.383,
+              "p95Ms": 11.113,
+              "minMs": 7.119,
+              "maxMs": 13
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 10.708,
+              "medianMs": 10.632,
+              "p95Ms": 12.456,
+              "minMs": 9.253,
+              "maxMs": 12.88
+            }
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "allIndexesMedianMs": 11.573,
+            "onlyCreatedAtIndexMedianMs": 12.35,
+            "noSecondaryIndexesMedianMs": 14.864,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 11.881,
+              "medianMs": 11.573,
+              "p95Ms": 13.78,
+              "minMs": 10.973,
+              "maxMs": 15.038
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 12.924,
+              "medianMs": 12.35,
+              "p95Ms": 14.315,
+              "minMs": 11.438,
+              "maxMs": 23.896
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 15.435,
+              "medianMs": 14.864,
+              "p95Ms": 18.648,
+              "minMs": 13.386,
+              "maxMs": 21.89
+            }
+          },
+          {
+            "name": "engagement(30d)",
+            "allIndexesMedianMs": 41.34,
+            "onlyCreatedAtIndexMedianMs": 40.104,
+            "noSecondaryIndexesMedianMs": 41.811,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 42.54,
+              "medianMs": 41.34,
+              "p95Ms": 47.587,
+              "minMs": 38.908,
+              "maxMs": 51.219
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 41.456,
+              "medianMs": 40.104,
+              "p95Ms": 47.474,
+              "minMs": 38.668,
+              "maxMs": 50.307
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 42.446,
+              "medianMs": 41.811,
+              "p95Ms": 47.248,
+              "minMs": 39.649,
+              "maxMs": 47.998
+            }
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "allIndexesMedianMs": 1.023,
+            "onlyCreatedAtIndexMedianMs": 3.448,
+            "noSecondaryIndexesMedianMs": 3.293,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 1.161,
+              "medianMs": 1.023,
+              "p95Ms": 1.858,
+              "minMs": 0.881,
+              "maxMs": 1.938
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 3.49,
+              "medianMs": 3.448,
+              "p95Ms": 3.923,
+              "minMs": 3.2,
+              "maxMs": 4.13
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 3.576,
+              "medianMs": 3.293,
+              "p95Ms": 5.671,
+              "minMs": 2.56,
+              "maxMs": 8.028
+            }
+          }
+        ],
+        "explain": {
+          "indexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "FETCH",
+              "IXSCAN(hashtags_created)"
+            ],
+            "nReturned": 38,
+            "totalKeysExamined": 38,
+            "totalDocsExamined": 38,
+            "executionTimeMillis": 0
+          },
+          "unindexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "COLLSCAN"
+            ],
+            "nReturned": 38,
+            "totalKeysExamined": 0,
+            "totalDocsExamined": 5000,
+            "executionTimeMillis": 1
+          }
+        },
+        "workload": null
+      },
+      {
+        "posts": 20000,
+        "ingest": {
+          "imported": 20000,
+          "durationMs": 9464
+        },
+        "queries": [
+          {
+            "name": "overview(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 123.406,
+              "medianMs": 120.834,
+              "p95Ms": 138.504,
+              "minMs": 112.563,
+              "maxMs": 144.483
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 122.116,
+              "medianMs": 120.059,
+              "p95Ms": 129.585,
+              "minMs": 114.974,
+              "maxMs": 133.202
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.984,
+              "medianMs": 0.504,
+              "p95Ms": 2.678,
+              "minMs": 0.302,
+              "maxMs": 3.82
+            },
+            "hitRatio": 1,
+            "speedupMedian": 239.8
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 38.005,
+              "medianMs": 37.242,
+              "p95Ms": 41.521,
+              "minMs": 34.953,
+              "maxMs": 47.05
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 40.064,
+              "medianMs": 38.979,
+              "p95Ms": 45.573,
+              "minMs": 36.414,
+              "maxMs": 49.064
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.367,
+              "medianMs": 0.357,
+              "p95Ms": 0.424,
+              "minMs": 0.322,
+              "maxMs": 0.524
+            },
+            "hitRatio": 1,
+            "speedupMedian": 104.3
+          },
+          {
+            "name": "trends:rising(7d)",
+            "params": {
+              "window": "7d",
+              "kind": "hashtag",
+              "limit": 10,
+              "minCount": 3
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 27.6,
+              "medianMs": 26.506,
+              "p95Ms": 35.299,
+              "minMs": 25.106,
+              "maxMs": 41.34
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 31.901,
+              "medianMs": 30.612,
+              "p95Ms": 38.142,
+              "minMs": 27.19,
+              "maxMs": 48.841
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.481,
+              "medianMs": 0.407,
+              "p95Ms": 0.855,
+              "minMs": 0.325,
+              "maxMs": 1.425
+            },
+            "hitRatio": 1,
+            "speedupMedian": 65.1
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "params": {
+              "window": "30d",
+              "platform": [
+                "twitter"
+              ]
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 44.477,
+              "medianMs": 42.358,
+              "p95Ms": 53.679,
+              "minMs": 41.018,
+              "maxMs": 58.508
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 47.831,
+              "medianMs": 47.782,
+              "p95Ms": 53.618,
+              "minMs": 43.4,
+              "maxMs": 55.742
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.445,
+              "medianMs": 0.424,
+              "p95Ms": 0.59,
+              "minMs": 0.324,
+              "maxMs": 1.005
+            },
+            "hitRatio": 1,
+            "speedupMedian": 99.9
+          },
+          {
+            "name": "engagement(30d)",
+            "params": {
+              "window": "30d"
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 159.346,
+              "medianMs": 156.374,
+              "p95Ms": 176.825,
+              "minMs": 151.321,
+              "maxMs": 177.506
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 163.637,
+              "medianMs": 161.993,
+              "p95Ms": 178.867,
+              "minMs": 154.63,
+              "maxMs": 183.578
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.83,
+              "medianMs": 0.749,
+              "p95Ms": 1.223,
+              "minMs": 0.561,
+              "maxMs": 2.045
+            },
+            "hitRatio": 1,
+            "speedupMedian": 208.8
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "params": {
+              "hashtag": [
+                "ai"
+              ],
+              "page": 1
+            },
+            "mongo": {
+              "runs": 30,
+              "avgMs": 1.91,
+              "medianMs": 1.718,
+              "p95Ms": 3.239,
+              "minMs": 1.39,
+              "maxMs": 3.394
+            },
+            "cacheMiss": {
+              "runs": 30,
+              "avgMs": 5.11,
+              "medianMs": 4.764,
+              "p95Ms": 6.523,
+              "minMs": 3.515,
+              "maxMs": 9.613
+            },
+            "cacheHit": {
+              "runs": 30,
+              "avgMs": 0.784,
+              "medianMs": 0.645,
+              "p95Ms": 1.128,
+              "minMs": 0.532,
+              "maxMs": 3.746
+            },
+            "hitRatio": 1,
+            "speedupMedian": 2.7
+          }
+        ],
+        "indexEffect": [
+          {
+            "name": "overview(30d)",
+            "allIndexesMedianMs": 120.834,
+            "onlyCreatedAtIndexMedianMs": 119.862,
+            "noSecondaryIndexesMedianMs": 119.968,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 123.406,
+              "medianMs": 120.834,
+              "p95Ms": 138.504,
+              "minMs": 112.563,
+              "maxMs": 144.483
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 119.649,
+              "medianMs": 119.862,
+              "p95Ms": 127.123,
+              "minMs": 113.529,
+              "maxMs": 129.863
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 123.256,
+              "medianMs": 119.968,
+              "p95Ms": 134.812,
+              "minMs": 117.415,
+              "maxMs": 142.048
+            }
+          },
+          {
+            "name": "trends:top(7d,hashtag)",
+            "allIndexesMedianMs": 37.242,
+            "onlyCreatedAtIndexMedianMs": 40.304,
+            "noSecondaryIndexesMedianMs": 50.275,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 38.005,
+              "medianMs": 37.242,
+              "p95Ms": 41.521,
+              "minMs": 34.953,
+              "maxMs": 47.05
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 42.12,
+              "medianMs": 40.304,
+              "p95Ms": 51.942,
+              "minMs": 37.48,
+              "maxMs": 64.982
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 51.808,
+              "medianMs": 50.275,
+              "p95Ms": 58.633,
+              "minMs": 48.733,
+              "maxMs": 62.217
+            }
+          },
+          {
+            "name": "trends:rising(7d)",
+            "allIndexesMedianMs": 26.506,
+            "onlyCreatedAtIndexMedianMs": 25.797,
+            "noSecondaryIndexesMedianMs": 33.383,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 27.6,
+              "medianMs": 26.506,
+              "p95Ms": 35.299,
+              "minMs": 25.106,
+              "maxMs": 41.34
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 26.635,
+              "medianMs": 25.797,
+              "p95Ms": 30.078,
+              "minMs": 24.733,
+              "maxMs": 30.674
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 34.185,
+              "medianMs": 33.383,
+              "p95Ms": 38.902,
+              "minMs": 31.863,
+              "maxMs": 42.531
+            }
+          },
+          {
+            "name": "sentiment(30d,twitter)",
+            "allIndexesMedianMs": 42.358,
+            "onlyCreatedAtIndexMedianMs": 42.287,
+            "noSecondaryIndexesMedianMs": 48.641,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 44.477,
+              "medianMs": 42.358,
+              "p95Ms": 53.679,
+              "minMs": 41.018,
+              "maxMs": 58.508
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 44.848,
+              "medianMs": 42.287,
+              "p95Ms": 51.304,
+              "minMs": 40.893,
+              "maxMs": 54.619
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 49.319,
+              "medianMs": 48.641,
+              "p95Ms": 54.889,
+              "minMs": 46.854,
+              "maxMs": 57.856
+            }
+          },
+          {
+            "name": "engagement(30d)",
+            "allIndexesMedianMs": 156.374,
+            "onlyCreatedAtIndexMedianMs": 159.002,
+            "noSecondaryIndexesMedianMs": 156.084,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 159.346,
+              "medianMs": 156.374,
+              "p95Ms": 176.825,
+              "minMs": 151.321,
+              "maxMs": 177.506
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 160.385,
+              "medianMs": 159.002,
+              "p95Ms": 169.432,
+              "minMs": 151.217,
+              "maxMs": 209.292
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 157.775,
+              "medianMs": 156.084,
+              "p95Ms": 168.437,
+              "minMs": 148.953,
+              "maxMs": 178.815
+            }
+          },
+          {
+            "name": "posts:list(hashtag=ai)",
+            "allIndexesMedianMs": 1.718,
+            "onlyCreatedAtIndexMedianMs": 8.626,
+            "noSecondaryIndexesMedianMs": 8.979,
+            "allIndexes": {
+              "runs": 30,
+              "avgMs": 1.91,
+              "medianMs": 1.718,
+              "p95Ms": 3.239,
+              "minMs": 1.39,
+              "maxMs": 3.394
+            },
+            "onlyCreatedAtIndex": {
+              "runs": 30,
+              "avgMs": 8.778,
+              "medianMs": 8.626,
+              "p95Ms": 9.576,
+              "minMs": 8.095,
+              "maxMs": 10.775
+            },
+            "noSecondaryIndexes": {
+              "runs": 30,
+              "avgMs": 9.058,
+              "medianMs": 8.979,
+              "p95Ms": 10.149,
+              "minMs": 8.313,
+              "maxMs": 10.191
+            }
+          }
+        ],
+        "explain": {
+          "indexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "FETCH",
+              "IXSCAN(hashtags_created)"
+            ],
+            "nReturned": 154,
+            "totalKeysExamined": 154,
+            "totalDocsExamined": 154,
+            "executionTimeMillis": 0
+          },
+          "unindexed": {
+            "query": "posts.find({ hashtags: 'ai', created_at: last 7 days })",
+            "stages": [
+              "COLLSCAN"
+            ],
+            "nReturned": 154,
+            "totalKeysExamined": 0,
+            "totalDocsExamined": 20000,
+            "executionTimeMillis": 6
+          }
+        },
+        "workload": {
+          "requests": 300,
+          "hits": 282,
+          "misses": 18,
+          "hitRatio": 0.94,
+          "latency": {
+            "runs": 300,
+            "avgMs": 4.811,
+            "medianMs": 0.476,
+            "p95Ms": 8.785,
+            "minMs": 0.3,
+            "maxMs": 180.887
+          },
+          "note": "6 queries x 3 windows = 18 distinct keys"
+        }
+      }
+    ]
+  }
+}
